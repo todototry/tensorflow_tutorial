@@ -7,8 +7,8 @@ data_y = data_x*3 + 0.3
 
 
 # Linear Model's
-W = tf.Variable(tf.random_uniform([1],-1.0,1.0))
-b = tf.Variable(tf.zeros([1]))
+W = tf.Variable(tf.random_uniform([1],-1.0,1.0))  # W = tf.Variable(2.0)
+b = tf.Variable(tf.zeros([1]))  # b = tf.Variable(1.0)
 
 # model expression
 y_head = W*data_x + b
