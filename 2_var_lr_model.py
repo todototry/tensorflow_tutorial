@@ -14,7 +14,7 @@ b = tf.Variable(tf.zeros([1]))
 y_head = W*data_x + b
 
 # loss
-loss = tf.square(y_head-data_y)
+loss = tf.reduce_mean(tf.square(y_head-data_y))
 
 # algorithm
 optimizer = tf.train.GradientDescentOptimizer(learning_rate=0.1)
@@ -29,7 +29,7 @@ init = tf.global_variables_initializer()
 sess.run(init)
 
 # sgd:
-for i in range(100):
+for i in range(501):
     sess.run(opt_process)
     if i % 20 == 0:
         print(i,sess.run(W),sess.run(b))
